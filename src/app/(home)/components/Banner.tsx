@@ -13,7 +13,7 @@ const Banner = () => {
           width={0}
           sizes="100vw"
         />
-        <div className="absolute inset-0 h-full w-full rounded-lg bg-gray-950 opacity-40">
+        <div className="absolute inset-0 h-full w-full rounded-lg bg-gray-950 opacity-60">
           <Image
             src={'/book.png'}
             alt="billboard"
@@ -24,7 +24,7 @@ const Banner = () => {
             style={{ width: 'auto', height: '18rem' }}
           />
           <h3 
-            className="absolute left-10 top-1/2 w-full max-w-3xl -translate-y-1/2 text-5xl font-semibold tracking-tight text-white"
+            className="absolute text-white left-10 top-1/2 w-full max-w-3xl -translate-y-1/2 text-5xl font-semibold tracking-tight"
           >Connect, Share and Trade Your Favourite Reads...</h3>
         </div>
       </div>
