@@ -1,24 +1,15 @@
-import React from 'react'
-import Banner from './components/Banner'
-import BookList from './components/BookList'
+import React, { Suspense } from "react";
+import Banner from "./components/Banner";
+import BookList from "./components/BookList";
+import Loading from "../../components/Loading";
 
 export default async function Home() {
-  async function fetchdetails() {
-    const response = await fetch(
-      `${process.env.BACKEND_URL}/books/`
-    );
-    if (!response.ok) {
-     throw new Error("Could not fetch details");
-    }
-    const responseBody = await response.json();
-    return responseBody;
-  }
-
-  const books = await fetchdetails();
   return (
-      <>
-        <Banner/>
-        <BookList books={books}/>
-      </>
+    <>
+      <Banner />
+      <Suspense fallback={<Loading/>}>
+        <BookList />
+      </Suspense>
+    </>
   );
 }
