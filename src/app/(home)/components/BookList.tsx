@@ -1,13 +1,12 @@
 import { BOOK } from "@/types";
 import React from "react";
 import BookCard from "./BookCard";
-import Loading from "../../../components/Loading";
 
 const BookList = async () => {
   async function fetchdetails() {
    
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/books/`);
+      const response = await fetch(`${process.env.BACKEND_URL}/books/`, {cache: 'no-store'});
       if (!response.ok) {
         throw new Error("Could not fetch details");
       }
